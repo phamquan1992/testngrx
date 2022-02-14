@@ -11,44 +11,44 @@ namespace NgrxExample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaiDangController : ControllerBase
+    public class TaikhoanController : ControllerBase
     {
-        private readonly IBaidangService baidangService;
-        public BaiDangController(IBaidangService _IBaidangService)
+        private readonly ITaikhoanService taikhoanService;
+        public TaikhoanController(ITaikhoanService _ITaikhoanService)
         {
-            baidangService = _IBaidangService;
+            taikhoanService = _ITaikhoanService;
         }
         [HttpGet]
-        public IEnumerable<baidang> Get()
+        public IEnumerable<taikhoan> Get()
         {
-            return baidangService.GetAll();
+            return taikhoanService.GetAll();
         }
         [HttpGet]
         [Route("{id}")]
-        public baidang GetbyKey(int id)
+        public taikhoan GetbyKey(int id)
         {
-            return baidangService.GetbyKey(id);
+            return taikhoanService.GetbyKey(id);
         }
         [HttpPost]
         [Route("Create")]
-        public bool CreateNew([FromBody] baidang entity)
+        public bool CreateNew([FromBody] taikhoan entity)
         {
-            return baidangService.CreateNew(entity);
+            return taikhoanService.CreateNew(entity);
         }
         [HttpPut]
         [Route("Edit")]
-        public bool Update([FromBody] baidang entity)
+        public bool Update([FromBody] taikhoan entity)
         {
-            return baidangService.Update(entity);
+            return taikhoanService.Update(entity);
         }
         [HttpDelete]
         [Route("Delete/{id}")]
         public bool Delete(int id)
         {
-            var obj = baidangService.GetbyKey(id);
+            var obj = taikhoanService.GetbyKey(id);
             if (obj == null)
                 return false;
-            return baidangService.Delete(obj);
+            return taikhoanService.Delete(obj);
         }
     }
 }

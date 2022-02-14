@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NgrxExample.Extention;
+using NgrxExample.Repositories.IRepositories;
+using NgrxExample.Repositories.Repositories;
+using NgrxExample.Service.IService;
+using NgrxExample.Service.ServiceImp;
 
 namespace NgrxExample
 {
@@ -22,6 +27,22 @@ namespace NgrxExample
         {
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
+            services.AddNHibernate(Configuration["ConnectionStrings:DefaultConnection"]);
+            #region Repository
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IBaidangRepository, BaidangRepository>();
+            services.AddScoped<IChuyenmucRepository, ChuyenmucRepository>();
+            services.AddScoped<ILuotxemRepository, LuotxemRepository>();
+            services.AddScoped<ITaikhoanRepository, TaikhoanRepository>();
+            services.AddScoped<ITheloaiRepository, TheloaiRepository>();
+            #endregion
+            #region Service
+            services.AddScoped<IBaidangService, BaidangService>();
+            services.AddScoped<IChuyenmucService, ChuyenmucService>();
+            services.AddScoped<ILuotxemService, LuotxemService>();
+            services.AddScoped<ITaikhoanService, TaikhoanService>();
+            services.AddScoped<ITheloaiService, TheloaiService>();
+            #endregion
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";

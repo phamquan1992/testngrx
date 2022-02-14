@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NgrxExample.Enttites\NgrxExample.Enttites.csproj" />
+    <ProjectReference Include="..\NgrxExample.Repositories\NgrxExample.Repositories.csproj" />
+  </ItemGroup>
+
 </Project>
