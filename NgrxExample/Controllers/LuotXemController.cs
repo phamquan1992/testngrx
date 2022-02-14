@@ -11,5 +11,6 @@ namespace NgrxExample.Controllers
     [ApiController]
     public class LuotXemController : ControllerBase
     {
+        
     }
 }
