@@ -20,7 +20,8 @@ export const FECTH_BAIDANG_FAILURE = createAction(
     BaidangActionType.Fecth_baidang_fail
 )
 export const GET_BAIDANG_OBJ = createAction(
-    BaidangActionType.Get_baidang_obj
+    BaidangActionType.Get_baidang_obj,
+    props<{url:string}>()
 )
 export const GET_BAIDANG_OBJ_SUCCESS = createAction(
     BaidangActionType.Get_baidang_obj_success,

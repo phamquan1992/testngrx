@@ -12,4 +12,7 @@ export class DataService {
   get(uri:string){
     return this.http.get(uri).pipe();
   }
+  getbykey(uri:string){
+    return this.http.get(uri).pipe();
+  }
 }

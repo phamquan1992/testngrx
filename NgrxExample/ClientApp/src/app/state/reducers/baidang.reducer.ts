@@ -32,7 +32,7 @@ export const BaidangReducer = createReducer(
             ...state, loading: false
         }
     )),
-    on(BaidangAction.GET_BAIDANG_OBJ, state => (
+    on(BaidangAction.GET_BAIDANG_OBJ, (state) => (
         {
             ...state, loading: true
         }

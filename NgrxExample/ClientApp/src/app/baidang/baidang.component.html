@@ -1,14 +1,21 @@
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Tên bài đăng</td>
+<table class="border-collapse w-full border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
+    <thead class="bg-slate-50 dark:bg-slate-700">
+        <tr class="text-center">
+            <td class="w-1/6 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200">ID</td>
+            <td class="w-4/6 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200">Tên bài đăng</td>
+            <td class="w-1/6 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200">Cập nhật</td>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let bd of listbaidang|async">
-            <td>{{bd.idbaidang}}</td>
-            <td>{{bd.tenbaidang}}</td>
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">{{bd.idbaidang}}</td>
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">{{bd.tenbaidang}}</td>
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><button (click)="ShowObj(bd.idbaidang)"><i class="fa-solid fa-pencil"></i>Sửa</button></td>
         </tr>
     </tbody>
 </table>
+
+<div *ngIf="obj_bd">
+    <span>{{obj_bd.idbaidang}}</span>
+    <span>{{obj_bd.tenbaidang}}</span>
+</div>
