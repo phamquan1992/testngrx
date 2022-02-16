@@ -60,3 +60,7 @@ export const getBaidangs = createSelector(
     getBaidangfeatureState,
     (state: BaidangState) => state.list
 )
+export const getBaidangObj = createSelector(
+    getBaidangfeatureState,
+    (state: BaidangState) => state.obj_baidang
+)
