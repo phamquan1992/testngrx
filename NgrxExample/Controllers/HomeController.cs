@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NgrxExample.Enttites.Domain2;
+//using NgrxExample.Enttites.Domain2;
 using NgrxExample.Service.IService;
 using System;
 using System.Collections.Generic;
@@ -24,15 +24,15 @@ namespace NgrxExample.Controllers
             taikhoanService = _taikhoanService;
             theloaiService = _theloaiService;
         }
-        [HttpGet]
-        public InfoHome Get()
-        {
-            InfoHome obj = new InfoHome();
-            obj.countBd = baidangService.GetAll().Count();
-            obj.countCm = chuyenmucService.GetAll().Count();
-            obj.countTk = taikhoanService.GetAll().Count();
-            obj.countTl = theloaiService.GetAll().Count();
-            return obj;
-        }
+        //[HttpGet]
+        //public InfoHome Get()
+        //{
+        //    InfoHome obj = new InfoHome();
+        //    obj.countBd = baidangService.GetAll().Count();
+        //    obj.countCm = chuyenmucService.GetAll().Count();
+        //    obj.countTk = taikhoanService.GetAll().Count();
+        //    obj.countTl = theloaiService.GetAll().Count();
+        //    return obj;
+        //}
     }
 }

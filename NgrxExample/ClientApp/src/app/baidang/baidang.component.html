@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Tên bài đăng</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bd of listbaidang|async">
+            <td>{{bd.idbaidang}}</td>
+            <td>{{bd.tenbaidang}}</td>
+        </tr>
+    </tbody>
+</table>
