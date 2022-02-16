@@ -5,11 +5,13 @@ import { AppState } from "../app.state";
 
 export interface BaidangState {
     list: baidang[],
-    loading: boolean
+    loading: boolean,
+    obj_baidang: baidang
 }
 export const initialState = {
     list: [] as baidang[],
-    loading: false
+    loading: false,
+    obj_baidang: null as unknown as baidang
 };
 export const BaidangReducer = createReducer(
     initialState,
@@ -28,6 +30,24 @@ export const BaidangReducer = createReducer(
     on(BaidangAction.FECTH_BAIDANG_FAILURE, state => (
         {
             ...state, loading: false
+        }
+    )),
+    on(BaidangAction.GET_BAIDANG_OBJ, state => (
+        {
+            ...state, loading: true
+        }
+    )),
+    on(BaidangAction.GET_BAIDANG_OBJ_SUCCESS, (state, { bai_dang }) => (
+        {
+            ...state,
+            obj_baidang: bai_dang,
+            loading: false
+        }
+    )),
+    on(BaidangAction.GET_BAIDANG_OBJ_FAIL, state => (
+        {
+            ...state,
+            loading: false
         }
     ))
 );
